@@ -90,6 +90,7 @@ class xpl extends eqLogic {
 	}
 
 	public static function proccessMessageEvent($_message = null) {
+		log::add('xpl', 'debug', 'proccessMessageEvent: ' . $_message->messageSchemeIdentifier() . ' ' . $_message->source() . ' ' . $_message->bodyItem('device') . ' ' . $_message->bodyItem('type') . ' ' . $_message->bodyItem('current') );
 		switch ($_message->messageSchemeIdentifier()) {
 			case 'sensor.basic':
 				require_once dirname(__FILE__) . '/../schema/sensor.basic.class.php';
